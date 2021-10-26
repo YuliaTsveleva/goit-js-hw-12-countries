@@ -79,6 +79,12 @@ p {
 
 .languages-list {
   padding-left: 0;
+  list-style:none
+}
+
+.language{
+  padding-left: 30px;
+  
 }
 
 .flag-image {
@@ -89,10 +95,12 @@ p {
 
 .countries-list {
   text-align: left;
+  
 }
 
 .countries-item {
   cursor: pointer;
+  
 }
 
 .countries-item:hover {
