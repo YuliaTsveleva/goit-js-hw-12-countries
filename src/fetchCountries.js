@@ -1,13 +1,8 @@
-import countryTemplate from "./templates/country.hbs";
+const BASE_URL = `https://restcountries.com/v2/name/`;
 
-fetch("https://restcountries.com/v2/name/ukraine")
-  .then((response) => {
+export default function fetchCountry(searchQuery) {
+  const url = `${BASE_URL}${searchQuery}`;
+  return fetch(url).then((response) => {
     return response.json();
-  })
-  .then((country) => {
-    console.log(country);
-    const markup = countryTemplate(country);
-  })
-  .catch((error) => {
-    console.log(error);
   });
+}
