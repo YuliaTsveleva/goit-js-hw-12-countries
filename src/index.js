@@ -5,15 +5,12 @@ import countriesListTemplate from "./templates/countries-list.hbs";
 import debounce from "lodash.debounce";
 import { onNotice } from "./pnotify.js";
 import { onError } from "./pnotify.js";
-// import { setNotice, setError } from "./js/notify";
-
-// import setNotice from "./pnotify.js";
-// import setError from "./pnotify.js";
 
 const refs = getRefs();
 refs.input.addEventListener("input", debounce(searchCountry, 500));
 
 function searchCountry(e) {
+  e.preventDefault();
   const data = refs.input.value;
   fetchCountry(data)
     .then(toMakeMarkup)
